@@ -363,21 +363,30 @@ import Layout from "../layouts/Layout.astro";
 
   // 四則演算
   function calculation(symbol) {
+    let result = 0;
     switch (symbol) {
       case "+":
-        first_number = Number(first_number) + Number(second_number);
+        result = Number(first_number) + Number(second_number);
+        first_number = String(result);
+        // first_number = Number(first_number) + Number(second_number);
         break;
       case "-":
-        first_number = Number(first_number) - Number(second_number);
+        result = Number(first_number) - Number(second_number);
+        first_number = String(result);
+        // first_number = Number(first_number) - Number(second_number);
         break;
       case "×":
-        first_number = Number(first_number) * Number(second_number);
+        result = Number(first_number) * Number(second_number);
+        first_number = String(result);
+        // first_number = Number(first_number) * Number(second_number);
         break;
       case "÷":
         if (first_number == "0" || second_number == "0") {
           first_number = "error";
         } else {
-          first_number = Number(first_number) / Number(second_number);
+          result = Number(first_number) / Number(second_number);
+          first_number = String(result);
+          // first_number = Number(first_number) / Number(second_number);
         }
         break;
       case "=":
